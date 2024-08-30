@@ -1,0 +1,67 @@
+Structure
+Structure is the user defined datatypes in c
+it store the multiple of data in different datatypes
+Ex
+college deatils
+String name
+int rollno
+...
+etc
+
+Structure Syntax:
+struct-->keyword
+struct structure_name
+{
+
+datatype member1;
+datatype memeber2;
+.
+.
+.
+.
+N
+};
+Ex:
+struct human{
+char name[10];
+int age;
+char place[50];
+};
+
+
+--------------------------------------------
+Declare the structure
+using struct keyword within main function
+declaring the variables at the time of defining structure
+
+Access The structure
+Method 1
+Struct office
+{
+char name[20];
+int age;
+};
+
+inside the  main function
+struct  office structure object name
+struct office oo;
+declare the variableat the time
+
+Method 2:
+struct office
+{
+char name[20];
+int age;
+}oo;
+
+
+
+Access the structure
+
+
+1.using Dot operator .
+2.-> structure pointer operator
+
+
+
+

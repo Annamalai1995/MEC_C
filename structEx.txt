@@ -1,0 +1,137 @@
+Example Struct:
+#include<stdio.h>
+#include<string.h>
+//Define the struct
+struct college{
+	char name[50];
+	int age;
+	int weight;
+	
+};
+void main()
+{
+	struct college c;
+    c.age=28;
+    strcpy(c.name,"Annamalai");
+    c.weight=80;
+    
+    printf("College name:%s\n",c.name);
+    printf("Age is:%d\n",c.age);
+    printf("Weight is:%d\n",c.weight);
+}
+
+
+Example
+#include<stdio.h>
+#include<string.h>
+struct studentdetails
+{
+	int rollno;
+	char name[20];
+	float cgpa;
+	
+}sd1,sd2;
+
+void main()
+{
+	sd1.rollno=501;
+	strcpy(sd1.name,"Annamalai");
+	sd1.cgpa=76;
+	
+	
+	sd2.rollno=502;
+	strcpy(sd2.name,"Priya");
+	sd2.cgpa=98;
+	
+	printf("Student details id:%d\n",sd1.rollno);
+	printf("Stduent details name:%s\n",sd1.name);
+	printf("Student details CGPA:%f\n",sd1.cgpa);
+	
+	printf("Student details id:%d\n",sd2.rollno);
+	printf("Stduent details name:%s\n",sd2.name);
+	printf("Student details CGPA:%f\n",sd2.cgpa);
+	
+	
+	
+	
+}
+
+Example
+// struct with simple
+#include<stdio.h>
+#include<string.h>
+struct mobile
+{
+char model[20];
+int ram, internal;
+double price;
+};
+void print(struct mobile);
+void main()
+{
+	struct mobile mob1;
+	strcpy(mob1.model,"Nokia6.1Plus");
+	mob1.ram=4;mob1.internal=64;
+	mob1.price=14900.3;
+	struct mobile mob2={"Honor9lite",3,32,8900.7};
+	struct mobile mob3;
+	scanf("%s%d%d%lf",mob3.model,&mob3.ram,&mob3.internal,&mob3.price);
+    print(mob1);
+	print(mob2);
+	print(mob3);
+}
+void print(struct mobile m)
+{
+	printf("\nMobile details: %s\t%d\t%d\t%.1lf",m.model,m.ram,m.internal,m.price);
+}
+
+
+Example
+// struct with array
+#include<stdio.h>
+struct mobile
+{
+char model[20];
+int ram, internal;
+double price;
+};
+int times;
+void insert(struct mobile*);
+void print(struct mobile*);
+void main()
+{
+	struct mobile poorvika[4];
+	times=1;
+	insert(poorvika);
+	times=1;
+	print(poorvika);
+}
+void print(struct mobile *m)
+{
+	if(times>2){
+	return;
+	}
+	else
+	{
+		printf("\nMobile details: ");
+		printf("\n%s\t%d\t%d\t%.1lf",
+		m->model,m->ram,m->internal,m->price);
+		times++;
+		m++;
+		print(m);
+	}
+}
+void insert(struct mobile *m)
+{
+	if(times>2){
+	return;
+	}
+	else
+	{
+		printf("\nEnter the mobile details: ");
+		scanf("%s%d%d%lf",m->model,&m->ram,&m->internal,&m->price);
+		times++;
+		m++;
+		insert(m);
+	}
+}
